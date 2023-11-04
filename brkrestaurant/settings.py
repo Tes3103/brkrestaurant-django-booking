@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('randomSecretKey2023')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-tes3103-brkrestaurant-dj-3zpapa9sm8.us2.codeanyapp.com',
-                 'https://brkrestaurant2023-f9222fa49607.herokuapp.com/', 'localhost']
+                 'brkrestaurant2023-f9222fa49607.herokuapp.com', 'localhost']
 
 
 # Application definition
