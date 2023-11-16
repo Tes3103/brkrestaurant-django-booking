@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.core.validators import MinValueValidator
 from django.utils import timezone
 from django.contrib.auth.models import User
 
@@ -20,14 +21,16 @@ class Booking(models.Model):
         max_length=200, null=False, blank=False)
     booking_date_and_time = models.DateTimeField(null=True)
 
-    def validate_date(reservation_date_and_time):
+    def validate_date(booking_date_and_time):
         if booking_date_and_time < timezone.now():
-            raise ValidationError("Date should be in the future")
+            raise ValidationError("Date should be set for future")
     booking_date_and_time = models.DateTimeField(
         null=True,
         blank=True,
         validators=[validate_date])
 
+    number_of_customers = models.PositiveIntegerField(
+        null=True, validators=[MinValueValidator(1)])
     customer_email = models.EmailField(max_length=100, null=False, blank=False)
     table = models.ForeignKey(
         Table, on_delete=models.CASCADE, related_name='booking_spot', blank=False)
@@ -40,6 +43,6 @@ class Booking(models.Model):
 
     def __str__(self):
         return f' User {self.user} has made a booking \
-                   for {self.customer_name}\
+                   for {self.customer_full_name}\
                    for {self.number_of_customers} customers\
-                   for {self.reservation_date_and_time}.'
+                   for {self.booking_date_and_time}.'
