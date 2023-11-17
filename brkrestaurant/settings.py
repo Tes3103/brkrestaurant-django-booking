@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'tempus_dominus',
+    'crispy_forms',
     'booking',
 ]
 
