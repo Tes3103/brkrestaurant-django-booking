@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% load static %} {% block content %} {% csrf_token %}
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <img
+        class="intro-img img-fluid mb-3 mb-lg-0 rounded"
+        src="{% static 'brkrestaurant/media/food.jpg' %}"
+        alt="Ethiopian Traditional Food with special serving"
+      />
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-upper"
+            >A place where you will experience a Unique Cuisine of the Ethiopian
+            Cultural Food
+          </span>
+        </h2>
+        <img
+          class="intro-img img-fluid mb-3 mb-lg-0 rounded"
+          src="{% static 'brkrestaurant/media/interior.jpg' %}"
+          alt="Inside View of BrkRestaurant"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner bg-faded text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper">Our Promise</span>
+            <span class="section-heading-lower">To You</span>
+          </h2>
+          <p class="mb-0">
+            We Welcome you with a great pleasure and treat you with a great
+            service so that you will have an amazing Experience and leave us a
+            wonderful smile
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
