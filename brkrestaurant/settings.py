@@ -48,11 +48,12 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'cloudinary_storage',
+    'allauth.socialaccount',
     'django.contrib.staticfiles',
     'cloudinary',
     'tempus_dominus',
     'crispy_forms',
+    'crispy_bootstrap4',
     'booking',
 ]
 
@@ -73,6 +74,9 @@ MESSAGE_TAGS = {
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPUS_DOMINUS_LOCALIZE = False
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-tes3103-brkrestaurant-dj-3zpapa9sm8.us2.codeanyapp.com"]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
